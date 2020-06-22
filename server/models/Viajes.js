@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
-const { now } = require('sequelize/types/lib/utils');
+
 
 const Viaje = db.define('viaje', {
     id: {
@@ -28,13 +28,10 @@ const Viaje = db.define('viaje', {
     disponibles: {
         type: Sequelize.STRING
     },
-    createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-
-    }
-  
     
-});
+   }, {
+        timestamps: false 
+    });
+   
 
 module.exports = Viaje;
